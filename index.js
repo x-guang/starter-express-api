@@ -7,7 +7,9 @@ app.all('/', (req, res) => {
 app.all('/t', async(req, res) => {
     console.log("Just got a test request!")
     for(let i=0; i<11;i++){
+      res.cork()
         res.write("i:"+i+"<br>\n")
+      res.uncork()
         await sleep(1e3)
     }
     res.write("end!")
