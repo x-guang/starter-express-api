@@ -6,7 +6,7 @@ app.all('/', (req, res) => {
 })
 app.all('/t', async(req, res) => {
     console.log("Just got a test request!")
-    for(let i=0; i<11;i++){
+    for(let i=0; i<1;i++){
         res.write("i:"+i+"<br>\n")
         await sleep(1e3)
     }
